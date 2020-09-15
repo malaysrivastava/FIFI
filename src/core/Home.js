@@ -1,9 +1,10 @@
 import React from 'react';
+import Card from '../PagesHelpers/Card';
 
 const Home = () => {
     return (
         <div>
-            Hello AAS
+        <Card />
         </div>
     );
 };

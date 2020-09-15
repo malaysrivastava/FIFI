@@ -1,0 +1,108 @@
+.card{
+
+}
+.card1{
+    position: relative;
+    width: 300px;
+    height: 400px;
+    margin: 40px;
+    background: #232323;
+    border-radius: 20px;
+    transform-style: preserve-3d;
+}
+.card1::before{
+    content: 'Vivo';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 5.5em;
+    font-weight: 900;
+    color: white;
+    font-style: italic;
+    opacity: 0;
+    transition: 0.5s;
+}
+.card1::after{
+    content: 'Phone';
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 5em;
+    font-weight: 900;
+    color: white;
+    font-style: italic;
+    opacity: 0;
+    transition: 0.5s;
+}
+.card1:hover::before,
+.card1:hover::after{
+    opacity: 0.4;
+}
+.card1 .cardname{
+    position: relative;
+    top: 0;
+    text-align: center;
+    color: white;
+    widows: 100%;
+    transform-style: preserve-3d;
+    transform: translate3d(0,0,75px);
+    transition: 0.5s;
+    opacity: 0;
+    z-index: 10;
+}
+.card1:hover .cardname{
+    top: 40px;
+    opacity: 1;
+}
+.card1 .seeAds{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform-style: preserve-3d;
+    transform: translate3d(-50%,0,75px);
+    color: white;
+    background: #333;
+    padding:10px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: 0.5s;
+    opacity: 0;
+    z-index: 10;
+}
+.card1:hover .seeAds{
+    opacity: 1;
+    bottom: 40px;
+}
+.card1 .circle{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    transition: 0.5s;
+    background: white;
+    transform-style: preserve-3d;
+    transform: translate3d(-50%, -50%,50px);
+    z-index: 10;
+    opacity: 0;
+}
+.card1:hover .circle{
+    opacity: 1;
+}
+.card1 .cardImg{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 300px;
+    transition: 0.5s;
+    z-index: 11;
+    transition: 0.5s;
+    transform-style: preserve-3d;
+    transform: translate3d(-50%,-50%,0px) rotate(-0deg);
+
+}
+.card1:hover .cardImg{
+    max-width: 250px;
+    transform: translate3d(-50%,-50%,100px) rotate(-30deg);
+}
