@@ -11,24 +11,34 @@ const Register = () => {
     email: '',
     password1: '',
     password2: '',
+    phone: '',
+    street: '',
+    city: '',
+    state: '',
+    pincode: '',
     textChange: 'Register'
   });
 
-  const { name, email, password1, password2 } = formData;
+  const { name, email, password1, password2, phone, street,pincode,state,city } = formData;
   const handleChange = text => e => {
     setFormData({ ...formData, [text]: e.target.value });
   };
 
   const handleSubmit = e => {
     e.preventDefault();
-    if (name && email && password1) {
+    if (name && email && password1 && phone) {
       if (password1 === password2) {
         setFormData({ ...formData, textChange: 'Submitting' });
         axios
           .post(`${process.env.REACT_APP_API_URL}/register`, {
             name,
             email,
-            password: password1
+            password: password1,
+            phone,
+            street,
+            city,
+            state,
+            pincode
           })
           .then(res => {
             setFormData({
@@ -37,6 +47,11 @@ const Register = () => {
               email: '',
               password1: '',
               password2: '',
+              street: '',
+              phone: '',
+              state: '',
+              pincode: '',
+              city: '',
               textChange: 'Submitted'
             });
 
@@ -77,6 +92,21 @@ const Register = () => {
           </Form.Group>
           <Form.Group>
             <Form.Control type="password" placeholder="confirm Password" onChange={handleChange('password2')} value={password2} />
+          </Form.Group>
+          <Form.Group>
+            <Form.Control type="number" placeholder="Phone Number" onChange={handleChange('phone')} value={phone} />
+          </Form.Group>
+          <Form.Group>
+            <Form.Control type="string" placeholder="Addres" onChange={handleChange('street')} value={street} />
+          </Form.Group>
+          <Form.Group>
+            <Form.Control type="string" placeholder="City" onChange={handleChange('city')} value={city} />
+          </Form.Group>
+          <Form.Group>
+            <Form.Control type="string" placeholder="State" onChange={handleChange('state')} value={state} />
+          </Form.Group>
+          <Form.Group>
+            <Form.Control type="number" placeholder="Pin Code" onChange={handleChange('pincode')} value={pincode} />
           </Form.Group>
           <Button variant="danger" type="submit">
             {formData.textChange}
