@@ -42,6 +42,7 @@ const UserDashboard = () => {
                 <div>
                     <ul>
                         <li><Link to={`/profile/${isAuth()._id}`}>Update Profile</Link></li>
+                        <li> { isAuth() && isAuth().role === 1 && <Link to='/admin/dashboard'>Admin Dashboard </Link> }</li>
                     </ul>
                 </div>
 

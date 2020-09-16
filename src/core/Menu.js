@@ -15,12 +15,14 @@ const isActive = (history, path) => {
 
 
 const Menu = ({ history }) => {
+
     const handleLogout = () => {
         signout(() => {
             history.push('/');
             toast.success('Signout Successfully');
         })
     }
+    
     return (
         <div>
             <ToastContainer />
@@ -35,13 +37,7 @@ const Menu = ({ history }) => {
                         <Nav.Link ><Link style={isActive(history, '/shop')} to='/shop'> Contact Us </Link></Nav.Link>
                         <Nav.Link ><Link style={isActive(history, '/shop')} to='/shop'> Sell </Link></Nav.Link>
                         {
-                            isAuth() && isAuth().role === 0 && <Nav.Link ><Link style={isActive(history, '/user/dashboard')} to='/user/dashboard'> Dashboard </Link></Nav.Link>
-                        }
-                        {
-                            isAuth() && isAuth().role === 1 && <Nav.Link ><Link style={isActive(history, '/admin/dashboard')} to='/admin/dashboard'>Admin Dashboard </Link>
-                                                               <Link style={isActive(history, '/user/dashboard')} to='/user/dashboard'>Edit Profile</Link>
-                            </Nav.Link>
-                            
+                            isAuth() &&  <Nav.Link ><Link style={isActive(history, '/user/dashboard')} to='/user/dashboard'> Dashboard </Link></Nav.Link>
                         }
                         {
                             !isAuth() &&

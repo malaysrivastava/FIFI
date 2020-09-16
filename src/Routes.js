@@ -16,7 +16,7 @@ import AdminRoute from './helpers/AdminRoute';
 import Menu from './core/Menu'
 import AddCategory from './Admin/AddCategory';
 import AddSubCategory from './Admin/AddSubcategory';
-
+import ErrorPage from './core/Error';
 
 const Routes = () => {
 
@@ -36,7 +36,9 @@ const Routes = () => {
                     <AdminRoute path='/create/category' exact component={AddCategory} />    
                     <AdminRoute path='/create/sub/category' exact component={AddSubCategory} />            
                     <PrivateRoute path = '/profile/:userId' exact component={Profile} />   
-                    <PrivateRoute path = '/user/dashboard' exact component={Dashboard} />     
+                    <PrivateRoute path = '/user/dashboard' exact component={Dashboard} />    
+                    
+                    <Route component={ErrorPage} />
                 </Switch>
             </BrowserRouter>
         </div>
