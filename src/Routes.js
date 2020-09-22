@@ -17,6 +17,8 @@ import Menu from './core/Menu'
 import AddCategory from './Admin/AddCategory';
 import AddSubCategory from './Admin/AddSubcategory';
 import ErrorPage from './core/Error';
+import Products from './core/Products';
+import Category from './core/Category'
 
 const Routes = () => {
 
@@ -31,6 +33,8 @@ const Routes = () => {
                     <Route path='/users/password/forget' exact render={props => <ForgetPassword {...props} />} />
                     <Route path='/users/password/reset/:token' exact render={props => <ResetPassword {...props} />} />
                     <Route path='/' exact render={props => <Home {...props} />} />
+                    <Route path='/product/:productId' exact component={Products} /> 
+                    <Route path='/category/:categoryId' exact component={Category} /> 
 
                     <AdminRoute path='/admin/dashboard' exact component={AdminDashboard} />
                     <AdminRoute path='/create/category' exact component={AddCategory} />    

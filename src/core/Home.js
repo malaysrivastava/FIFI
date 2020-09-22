@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Card from '../PagesHelpers/Card';
 import axios from 'axios'
 import queryString from 'query-string'
 import Cardd from '../PagesHelpers/Cardd';
@@ -166,7 +165,6 @@ const Home = () => {
                     ))
                 }
             </div>
-            <Card />
         </div>
     );
 };

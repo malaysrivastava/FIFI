@@ -1,0 +1,53 @@
+.chh2 img{
+    width: 100%;
+    height: 24vh !important;
+}
+.chh{
+    background-color: rgba(230, 251, 255,1);
+    max-width: 250px;
+    min-height: 36vh;
+}
+.chh1:hover{
+    text-decoration: none;
+}
+.chh3 h3{
+    text-align: center;
+    color: black;
+    font-weight: 600;
+    font-size: 21px;
+    letter-spacing: 2px;
+}
+.chh3 h4{
+    text-align: center;
+    color: red;
+    margin: -12px 0px 1px 0px;
+    font-size:18px;
+}
+.chh4{
+    text-align: center !important;
+    margin: auto;
+}
+.chhbutton{
+    color: black;
+    background-color: orange;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    display: flex;
+    margin: auto;
+    width: auto;
+    height: 29px !important;
+    align-items: center;
+    padding: 0px 6px 0 0px;
+}
+.chhbutton i{
+    padding: 0 8px;
+}
+.chhbutton p{
+    background-color: rgb(252, 252, 136);
+    font-size: 13px;
+    border-radius: 4px;
+    padding: 0px 3px;
+    margin-top: 16px;
+}

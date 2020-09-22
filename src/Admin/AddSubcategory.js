@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Layout from '../core/Layout';
 import { isAuth, getCookie } from '../helpers/auth';
 import { toast, ToastContainer } from 'react-toastify';
@@ -7,12 +7,31 @@ import axios from 'axios';
 
 const AddCategory = () => {
 
-    const [name, setName] = useState('');
+    const [category, setCategory] = useState([]);
+
+    const [namee, setName] = useState({
+        name: '',
+        Category: ''
+    });
+
+    const {name, Category} = namee
 
     const token = getCookie('token');
 
-    const handleChange = (e) => {
-        setName(e.target.value);
+    useEffect(() => {
+        axios.get(`${process.env.REACT_APP_API_URL}/categories`)
+            .then(res => {
+                setCategory(res.data)
+                console.log(res.data)
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }, [])
+
+    const handleChange = nameee => (e) => {
+        e.preventDefault()
+        setName({...namee, [nameee]:e.target.value});
     };
 
     const handleSubmit = e => {
@@ -21,14 +40,15 @@ const AddCategory = () => {
         if (name) {
             axios
                 .post(`${process.env.REACT_APP_API_URL}/sub/category/create/${isAuth()._id}`,
-                {
-                    name
-                },
-                {
-                    headers: {
-                        Authorization: `Bearer ${token}`
+                    {
+                        name,
+                        Category
+                    },
+                    {
+                        headers: {
+                            Authorization: `Bearer ${token}`
+                        }
                     }
-                }
                 )
                 .then(res => {
                     setName({
@@ -52,7 +72,18 @@ const AddCategory = () => {
             <h1>Add Subcategory</h1>
             <Form onSubmit={handleSubmit}>
                 <Form.Group >
-                    <Form.Control type="text" placeholder="Name" onChange={handleChange} value={name} />
+                    <Form.Control type="text" placeholder="Name"  onChange={handleChange('name')} value={name} />
+                </Form.Group>
+                <Form.Group >
+                    <Form.Label>Choose Category </Form.Label><br />
+                    <select onChange={handleChange('Category')} >
+                        <option>Please Select</option>
+                        {category && category.map((f, i) =>
+                            (<option key={i} value={f._id}>
+                                {f.name}
+                            </option>)
+                        )}
+                    </select>
                 </Form.Group>
                 <Button variant="danger" type="submit">
                     Create SubCategory

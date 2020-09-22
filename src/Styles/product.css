@@ -1,0 +1,127 @@
+.pro{
+    width: 100%;
+    overflow: hidden;
+}
+.pro4{
+    display: flex;
+    flex-direction: row !important;
+    list-style-type: none;
+}
+.pro4 li{
+    width: 25% !important;
+}
+.pro4 li{
+    width: 25% !important;
+}
+.pro4 li button{
+    width: 100% !important;
+    height: 45px;
+    border: .5px groove rgb(223, 223, 223);
+    outline: none;
+    font-weight: bold;
+    border-radius:0 0 5px 5px;
+    letter-spacing: 1px;
+    font-size:17px;
+}
+.pro5{
+    width: 100vw ;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+.pro6{
+    width: 400vw;
+    display: flex;
+    flex-direction: row;
+    margin-left: 0vw;
+    transition: .3s linear;
+}
+.pro7{
+    width: 100vw ;
+}
+.prooo{
+    height: 0px !important;
+    width: 0px !important;
+    overflow: hidden;
+}
+.pro8{
+    width: 80%;
+    margin-left: 3%;
+    padding-right: 60px;
+    margin-top: 25px;
+}
+.pro8 ul{
+    margin-left: 20px;
+}
+.pro9 {
+    list-style-type: none;
+    margin-left: 0px !important;
+}
+.pro9 li::before{
+    content: "- ";
+}
+.acctive{
+    background-color: white;
+    border: 0px solid white !important;
+}
+.pro16 {
+    margin: 40px 3% auto 3%;
+    position: relative;
+}
+@media screen and (max-width: 450px){
+    .pro16 {
+        margin: 50px 4% 10px 4%;
+        position: relative;
+    }
+}
+.pro15{
+    height: 35px;
+}
+.pro14{
+    background-color: rgb(148, 148, 148);
+    padding-top: 15px;
+}
+
+.alice-carousel__prev-btn,
+.alice-carousel__next-btn {
+  display: inline-block !important;
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50% !important;
+  padding: 0px !important;
+  overflow: hidden !important;
+  margin: 20px 0 15px 0 !important;
+}
+
+.alice-carousel__next-btn {
+    position: relative;
+     left: 40.5% !important;
+}
+
+  .alice-carousel__prev-btn{
+      position: relative;
+      left: 38.5% !important;
+  }
+  .alice-carousel__prev-btn [data-area]::after,
+  .alice-carousel__next-btn [data-area]::after {
+    position: relative;
+    content: attr(data-area);
+    text-transform: capitalize; }
+
+.alice-carousel__prev-btn {
+  text-align: right !important;
+}
+
+.alice-carousel__prev-btn-item,
+.alice-carousel__next-btn-item {
+  display: block !important;
+  cursor: pointer;
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50%;
+  background-color:orange !important;
+  color: white !important;
+  line-height: 40px; }
+
+  .alice-carousel__prev-btn-item:hover,
+  .alice-carousel__next-btn-item:hover {
+    color: orange !important;}
