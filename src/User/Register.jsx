@@ -116,7 +116,7 @@ const Register = () => {
             {formData.textChange}
           </Button>
         </form>
-        <div className="col-sm-12 mt-3">
+        <div className="col-sm-12" style={{'margin-top':'3rem'}}>
         <h6 className="text-center m-0">Already a member?
         <a href='/login' target='_self'>
             <span className='ml-2'>SIGN IN</span>

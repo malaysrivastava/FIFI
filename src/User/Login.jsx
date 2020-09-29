@@ -59,30 +59,38 @@ const Login = ({ history }) => {
     <div>
       {isAuth() ? <Redirect to='/' /> : null}
       <ToastContainer />
-      <h1 className='text-2xl font-extrabold'> Sign In for Instagram</h1>
-      <Form onSubmit={handleSubmit}>
+      <div className="container centered text-center p-2 m-1">
+        <div className="row text-center m-auto">
+        <div className="col-sm-8 offset-sm-2 text-center ">
+      <h1 className='text-2xl text-center mb-2 font-extrabold'> Sign In</h1>
+      <form className="form" onSubmit={handleSubmit}>
 
-        <Form.Group>
-          <Form.Control type="email" placeholder="Enter email" onChange={handleChange('email')} value={email} />
-        </Form.Group>
-        <Form.Group>
-          <Form.Control type="password" placeholder="Password" onChange={handleChange('password1')} value={password1} />
-        </Form.Group>
-        <Button variant="danger" type="submit">
+        <div className="form-group">
+          <input className="form-control" type="email" placeholder="Enter email" onChange={handleChange('email')} value={email} />
+        </div>
+        <div className="form-group">
+          <input className="form-control" type="password" placeholder="Password" onChange={handleChange('password1')} value={password1} />
+        </div>
+        <Button variant="danger" style={{width:'100%'}} type="submit">
           Sign In
         </Button>
-        <Form.Group>
-          <Form.Text className="text-muted">
-            <h6>Don't have an account ?
-        <a href='/register' target='_self'>
-                <span className='ml-2'>Sign Up</span>
-              </a></h6>
-          </Form.Text>
-        </Form.Group>
-        <Form.Group>
+        <div className="form-group mt-2">
         <Link to='/users/password/forget'>Forget password?</Link>
-        </Form.Group>
-      </Form>
+        </div>
+      </form>
+      <div className="col-sm-12" style={{'margin-top':'10rem'}}>
+      <Form.Text className="text-muted">
+      <h6>Don't have an account ?
+  <a href='/register' target='_self'>
+          <span className='ml-2'>Sign Up</span>
+        </a></h6>
+    </Form.Text>
+      </div>
+     
+      </div>
+      
+      </div>
+     </div>
     </div>
   );
 };
