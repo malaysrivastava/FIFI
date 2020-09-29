@@ -126,7 +126,7 @@ const Home = () => {
                 <div>
                     <h1>Sell Faster,</h1>
                     <h2>Buy Smarter.</h2>
-                    <p>Sell your unwanted items faster on Jiji and earn extra cash</p>
+                    <h3>Sell your unwanted items faster on Jiji and earn extra cash</h3>
                     <p>Buy items from other people for a lower price.</p>
                 </div>
                 <div>
