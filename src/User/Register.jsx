@@ -3,7 +3,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios';
 import { isAuth } from '../helpers/auth';
 import { Redirect } from 'react-router-dom';
-import { Form, Button } from 'react-bootstrap'
+import { Button } from 'react-bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -79,47 +80,54 @@ const Register = () => {
       <div >
         {isAuth() ? <Redirect to='/' /> : null}
         <ToastContainer />
-        <h1 className='text-2xl font-extrabold'> Sign Up for Instagram</h1>
-        <Form onSubmit={handleSubmit}>
-          <Form.Group >
-            <Form.Control type="text" placeholder="name" onChange={handleChange('name')} value={name} />
-          </Form.Group>
-          <Form.Group>
-            <Form.Control type="email" placeholder="Enter email" onChange={handleChange('email')} value={email} />
-          </Form.Group>
-          <Form.Group>
-            <Form.Control type="password" placeholder="Password" onChange={handleChange('password1')} value={password1} />
-          </Form.Group>
-          <Form.Group>
-            <Form.Control type="password" placeholder="confirm Password" onChange={handleChange('password2')} value={password2} />
-          </Form.Group>
-          <Form.Group>
-            <Form.Control type="number" placeholder="Phone Number" onChange={handleChange('phone')} value={phone} />
-          </Form.Group>
-          <Form.Group>
-            <Form.Control type="string" placeholder="Addres" onChange={handleChange('street')} value={street} />
-          </Form.Group>
-          <Form.Group>
-            <Form.Control type="string" placeholder="City" onChange={handleChange('city')} value={city} />
-          </Form.Group>
-          <Form.Group>
-            <Form.Control type="string" placeholder="State" onChange={handleChange('state')} value={state} />
-          </Form.Group>
-          <Form.Group>
-            <Form.Control type="number" placeholder="Pin Code" onChange={handleChange('pincode')} value={pincode} />
-          </Form.Group>
-          <Button variant="danger" type="submit">
+        <div className="container centered text-center p-2 m-1">
+        <div className="row text-center m-auto">
+        <div className="col-sm-9 offset-sm-1 text-center ">
+        <h1 className='text-2xl text-center font-extrabold'> Sign Up</h1>
+        <form className="form mt-3 text-center" onSubmit={handleSubmit}>
+          <div className="form-group">
+            <input className="form-control" type="text" placeholder="name" onChange={handleChange('name')} value={name} />
+          </div>
+          <div className="form-group">
+            <input className="form-control" type="email" placeholder="Enter email" onChange={handleChange('email')} value={email} />
+          </div>
+          <div className="form-group">
+            <input className="form-control" type="password" placeholder="Password" onChange={handleChange('password1')} value={password1} />
+          </div>
+          <div className="form-group">
+            <input className="form-control" type="password" placeholder="confirm Password" onChange={handleChange('password2')} value={password2} />
+          </div>
+          <div className="form-group">
+            <input className="form-control" type="number" placeholder="Phone Number" onChange={handleChange('phone')} value={phone} />
+          </div>
+          <div className="form-group">
+            <input className="form-control" type="string" placeholder="Addres" onChange={handleChange('street')} value={street} />
+          </div>
+          <div className="form-group">
+            <input className="form-control" type="string" placeholder="City" onChange={handleChange('city')} value={city} />
+          </div>
+          <div className="form-group">
+            <input className="form-control" type="string" placeholder="State" onChange={handleChange('state')} value={state} />
+          </div>
+          <div className="form-group">
+            <input className="form-control" type="number" placeholder="Pin Code" onChange={handleChange('pincode')} value={pincode} />
+          </div>
+          <Button variant="success" style={{width:'100%'}} type="submit">
             {formData.textChange}
           </Button>
-          <Form.Group>
-            <Form.Text className="text-muted">
-              <h6>Already have an account ?
-              <a href='/login' target='_self'>
-                  <span className='ml-4'>Sign In</span>
-                </a></h6>
-            </Form.Text>
-          </Form.Group>
-        </Form>
+        </form>
+        <div className="col-sm-12 mt-3">
+        <h6 className="text-center m-0">Already a member?
+        <a href='/login' target='_self'>
+            <span className='ml-2'>SIGN IN</span>
+          </a></h6>
+     
+        </div>
+       
+        </div>
+        </div>
+        </div>
+               
       </div>
     </div>
   );
