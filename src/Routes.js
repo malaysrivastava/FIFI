@@ -18,7 +18,8 @@ import AddCategory from './Admin/AddCategory';
 import AddSubCategory from './Admin/AddSubcategory';
 import ErrorPage from './core/Error';
 import Products from './core/Products';
-import Category from './core/Category'
+import Category from './core/Category';
+import Footer from './PagesHelpers/Footer';
 
 const Routes = () => {
 
@@ -44,6 +45,7 @@ const Routes = () => {
                     
                     <Route component={ErrorPage} />
                 </Switch>
+                <Footer />
             </BrowserRouter>
         </div>
     );
