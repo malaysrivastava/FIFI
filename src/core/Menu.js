@@ -69,7 +69,7 @@ const Menu = ({ history }) => {
                                         <Dropdown.Menu>
                                             {
                                                 subcategories.map((s, i) => (
-                                                    s.Category.name == m.name ? (<Dropdown.Item><Link style={{ color: 'black' }} to={`/category/${s._id}`} >{s.name} {s.view}</Link></Dropdown.Item>) : ''
+                                                    s.Category.name === m.name ? (<Dropdown.Item><Link style={{ color: 'black' }} to={`/category/${s._id}`} >{s.name} {s.view}</Link></Dropdown.Item>) : ''
                                                 ))
                                             }
                                         </Dropdown.Menu>

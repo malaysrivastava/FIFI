@@ -12,6 +12,7 @@ const UserDashboard = () => {
     const { photo, phone, pincode, state, street, city } = values;
     const [len1, serLen1] = useState();
     const [len2, serLen2] = useState();
+    const [ads, SetAds] = useState([])
  
     const readProfile = () => {
         axios
@@ -34,6 +35,21 @@ const UserDashboard = () => {
 
     useEffect(() => {
         readProfile(_id)
+        axios
+        .get(`${process.env.REACT_APP_API_URL}/ads/by/postedBy?id=${_id}`,
+            {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            }
+        )
+        .then(res => {
+            SetAds(res.data)
+        })
+        .catch(err => {
+            console.error(err);
+        });
+
     }, [])
 
     return (
@@ -65,6 +81,9 @@ const UserDashboard = () => {
                 </div>
                 <div>
                     <h2>Your Adds</h2>
+                    {
+                        JSON.stringify(ads)
+                    }
                 </div>
             </Layout>
         </div>
