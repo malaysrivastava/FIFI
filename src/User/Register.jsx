@@ -5,7 +5,7 @@ import { isAuth } from '../helpers/auth';
 import { Redirect } from 'react-router-dom';
 import { Button } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import Regauth from '../Assests/Authentication Illustration.svg';
 const Register = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -80,9 +80,12 @@ const Register = () => {
       <div >
         {isAuth() ? <Redirect to='/' /> : null}
         <ToastContainer />
-        <div className="container centered text-center p-2 m-1">
-        <div className="row text-center m-auto">
-        <div className="col-sm-9 offset-sm-1 text-center ">
+        <div className="container p-2 mt-5">
+        <div className="row m-auto">
+        <div className="col-sm-5 p-3">
+         <img src={Regauth} style={{width:'100%'}}/>
+        </div>
+        <div className="col-sm-4 offset-sm-3 p-3">
         <h1 className='text-2xl text-center font-extrabold'> Sign Up</h1>
         <form className="form mt-3 text-center" onSubmit={handleSubmit}>
           <div className="form-group">
@@ -116,7 +119,7 @@ const Register = () => {
             {formData.textChange}
           </Button>
         </form>
-        <div className="col-sm-12" style={{'margin-top':'3rem'}}>
+        <div className="col-sm-12 mt-2" >
         <h6 className="text-center m-0">Already a member?
         <a href='/login' target='_self'>
             <span className='ml-2'>SIGN IN</span>
