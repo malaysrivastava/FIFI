@@ -57,19 +57,29 @@ const ResetPassword = ({ match }) => {
   return (
     <div >
       <ToastContainer />
-      <h1 className='text-2xl font-extrabold'> Reset Your Password </h1>
-      <Form onSubmit={handleSubmit} >
-        <Form.Group>
-          <Form.Control type="password" placeholder="Password" onChange={handleChange('password1')} value={password1} />
-        </Form.Group>
-        <Form.Group>
-          <Form.Control type="password" placeholder="Confirm Password" onChange={handleChange('password2')} value={password2} />
-        </Form.Group>
-        <Button variant="danger" type="submit">
+      <div className="container centered m-1 p-2">
+      <div className="row m-auto text-center">
+      <div className="col-sm-8 offset-sm-2">
+      <h1 className='text-2xl text-center font-extrabold'> Reset Your Password </h1>
+      <form className="form" onSubmit={handleSubmit} >
+        <div className="form-group">
+        <input className="form-control" type="password" placeholder="Password" onChange={handleChange('password1')} value={password1} />
+        </div>
+        
+        <div className="form-group">
+        <input className="form-control" type="password" placeholder="Confirm Password" onChange={handleChange('password2')} value={password2} />
+        
+        </div>
+        
+        <Button variant="danger" style={{width:'100%'}} type="submit">
           Sign In
         </Button>
-      </Form>
+      </form>
 
+      </div>
+      </div>
+      </div>
+      
     </div>
   );
 };

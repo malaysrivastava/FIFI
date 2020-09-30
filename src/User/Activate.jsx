@@ -52,23 +52,27 @@ const Activate = ({ match }) => {
       <div className='min-h-screen bg-gray-100 text-gray-900 flex justify-center'>
         {isAuth() ? <Redirect to='/' /> : null}
         <ToastContainer />
-        <h1 className='text-2xl font-extrabold'>
-          Welcome {name}
-        </h1>
-        <Form onSubmit={handleSubmit} >
-          <Button variant="danger" type="submit">
-            <span className='ml-3'>Activate your Account</span>
-          </Button>
-          <Form.Group>
-            <Form.Text className="text-muted">
-              <h6>Signup again ? ?
-                <a href='/register' target='_self'>
-                  <span className='ml-2'>Sign Up</span>
-                </a></h6>
-            </Form.Text>
-          </Form.Group>
-        </Form>
-
+        <div className="centered text-center mt-2 p-2">
+        <h1 className='text-2xl text-center font-extrabold'>
+        Welcome {name}
+      </h1>
+     
+        <Form className="form mt-5" onSubmit={handleSubmit} >
+        <Button variant="danger" className="btn btn-lg" type="submit">
+          <span className='text-center m-3'>Activate your Account</span>
+        </Button>
+        
+      </Form>
+      <div className="col-sm-12" style={{'margin-top':'7rem'}}>
+      <Form.Text className="text-muted">
+      <h6>Signup again?
+        <a href='/register' target='_self'>
+          <span className='m-1'>SIGN UP</span>
+        </a></h6>
+    </Form.Text>
+      </div>
+        </div>
+        
       </div>
     </div>
   );
