@@ -45,14 +45,21 @@ const ForgetPassword = ({history}) => {
   return (
     <div >
       <ToastContainer />
-            <h1 className='text-2xl font-extrabold'> Forget Password </h1>
-            <Form onSubmit={handleSubmit}>
+      <div className="conatiner m-1 centered p-2">
+      <div className="row m-auto text-center">
+      <div className="col-sm-12">
+      <h1 className='text-2xl m-3 text-center font-extrabold'> Forget Password </h1>
+      <form className="form" onSubmit={handleSubmit}>
 
-            <Form.Group>
-              <Form.Control type="email" placeholder="Enter email" onChange={handleChange('email')} value={email} />
-            </Form.Group>
-            <Button variant="danger" type="submit"> Submit </Button>
-            </Form>
+      <div className="form-group">
+        <input className="form-control" type="email" placeholder="Enter email" onChange={handleChange('email')} value={email} />
+        </div>
+      <Button variant="danger" type="submit" style={{width:'100%'}}> Submit </Button>
+      </form>
+      </div>
+      </div>
+      </div>      
+      
             </div>
   );
 };
