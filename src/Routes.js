@@ -45,7 +45,6 @@ const Routes = () => {
                     
                     <Route component={ErrorPage} />
                 </Switch>
-                <Footer />
             </BrowserRouter>
         </div>
     );
