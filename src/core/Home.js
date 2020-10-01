@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios'
 import queryString from 'query-string'
 import Cardd from '../PagesHelpers/Cardd';
+import illust from '../Assests/home.svg';
+import mobile from '../Assests/category.svg';
+import productclock from '../Assests/product.svg';
 
 const Home = () => {
 
@@ -107,7 +110,7 @@ const Home = () => {
             )
         }
         else {
-            return <h2>Please search the products</h2>
+            return <h6 className="text-success m-1">or Browse the categories</h6>
         }
     }
 
@@ -116,56 +119,130 @@ const Home = () => {
             return `Found ${results.length} products`
         }
         else {
-            return 'no products found'
+            return <h7 className="text-danger">no products found</h7>
         }
     }
 
     return (
-        <div>
-            <div>
-                <div>
+        <>
+            <div className="container mt-1 p-1">
+                <div className="row m-auto text-center">
+                <div className="col-sm-6 m-2 text-left">
                     <h1>Sell Faster,</h1>
-                    <h2>Buy Smarter.</h2>
-                    <p>Sell your unwanted items faster on Jiji and earn extra cash</p>
-                    <p>Buy items from other people for a lower price.</p>
+                    <h1>Buy Smarter.</h1>
+                    <p className="m-0 mt-4">Sell your unwanted items faster on Jiji and earn extra cash</p>
+                    <p className="m-0 mb-4">Buy items from other people for a lower price.</p>
+
+                    <form className="form mt-1" onSubmit={searchSubmit}>
+                    <select className="mr-3 btn" style={{border:'none'},{'border-radius':'20px','padding':'3px','background-color':'#A3A3A3'}} onChange={handleChange('category')}>
+                        <option style={{border:'none'},{'border-radius':'20px','padding':'3px','background-color':'#A3A3A3'}} value='All'>Pick a category</option>
+                        {categories.map((c, i) => (
+                            <option key={i} value={c._id}>{c.name}</option>
+                        ))}
+                    </select>
+                    <input className="btn mr-2" style={{border:'none'},{'border-radius':'20px','padding':'3px','background-color':'#A3A3A3'}} type='search' onChange={handleChange('search')}
+                        placeholder='search by city'
+                    />
+                    <button className='btn-success m-1 btn' style={{border:'none'},{'border-radius':'15px','padding':'0px 5px'}}> Search</button>
+                </form>
+                <Sexa />
                 </div>
-                <div>
-                    <form onSubmit={searchSubmit}>
-                        <select onChange={handleChange('category')}>
-                            <option value='All'>Pick a category</option>
-                            {categories.map((c, i) => (
-                                <option key={i} value={c._id}>{c.name}</option>
-                            ))}
-                        </select>
-                        <input type='search' onChange={handleChange('search')}
-                            placeholder='search by city'
-                        />
-                        <button className='btn-success'> Search</button>
-                    </form>
+                <div className="col-sm-5 text-sm-right offset-sm-2 m-2">
+                    <img src={illust} style={{width:'80%'}}/>
+                </div>
                 </div>
             </div>
-            <Sexa />
-            <div>
-                <div>
-                    <h4>Popular Categories</h4>
-                    <p>Most popular categories of items that users buy and sell.</p>
+            
+            <div className="container mt-1 p-1">
+            <div className="row m-auto">
+                <div className="col-sm-12 p-1">
+                 <h3 className="m-2">Popular Categories</h3>
+                    <p className="m-2">Most popular categories of items that users buy and sell.</p>
                 </div>
-                {
-                    JSON.stringify(damcat)
+                <div className="col-sm-12 p-1 m-1">
+                
+                    <div className="row m-auto">
+                    <div className="col-sm-2 m-2 p-3 mobile" style={{'border-radius':'17px','box-shadow':'3px 3px 3px 3px grey',cursor:'pointer'}}>
+                     <img src={mobile} style={{width:'100%'}}/>
+                    </div>
+                    <div className="col-sm-2 m-2 p-3 mobile" style={{'border-radius':'17px','box-shadow':'3px 3px 3px 3px grey',cursor:'pointer'}}>
+                     <img src={mobile} style={{width:'100%'}}/>
+                    </div>
+                    <div className="col-sm-2 m-2 p-3 mobile" style={{'border-radius':'17px','box-shadow':'3px 3px 3px 3px grey',cursor:'pointer'}}>
+                     <img src={mobile} style={{width:'100%'}}/>
+                    </div>
+                    <div className="col-sm-2 m-2 p-3 mobile" style={{'border-radius':'17px','box-shadow':'3px 3px 3px 3px grey',cursor:'pointer'}}>
+                     <img src={mobile} style={{width:'100%'}}/>
+                    </div>
+                    <div className="col-sm-2 m-2 p-3 mobile" style={{'border-radius':'17px','box-shadow':'3px 3px 3px 3px grey',cursor:'pointer'}}>
+                    <img src={mobile} style={{width:'100%'}}/>
+                   </div>
+                   <div className="col-sm-2 m-2 p-3 mobile" style={{'border-radius':'17px','box-shadow':'3px 3px 3px 3px grey',cursor:'pointer'}}>
+                   <img src={mobile} style={{width:'100%'}}/>
+                  </div>
+                  <div className="col-sm-2 m-2 p-3 mobile" style={{'border-radius':'17px','box-shadow':'3px 3px 3px 3px grey',cursor:'pointer'}}>
+                  <img src={mobile} style={{width:'100%'}}/>
+                 </div>
+                 <div className="col-sm-2 m-2 p-3 mobile" style={{'border-radius':'17px','box-shadow':'3px 3px 3px 3px grey',cursor:'pointer'}}>
+                 <img src={mobile} style={{width:'100%'}}/>
+                </div>
+                <div className="col-sm-2 m-2 p-3 mobile" style={{'border-radius':'17px','box-shadow':'3px 3px 3px 3px grey',cursor:'pointer'}}>
+                <img src={mobile} style={{width:'100%'}}/>
+               </div>
+               <div className="col-sm-2 m-2 p-3 mobile" style={{'border-radius':'17px','box-shadow':'3px 3px 3px 3px grey',cursor:'pointer'}}>
+               <img src={mobile} style={{width:'100%'}}/>
+              </div>
+
+                    </div>
+                {  
+                  //  JSON.stringify(damcat)
                 }
-            </div>
-            <div>
-                <div>
-                    <h4>Trending Products</h4>
-                    <p>Most Trending products on the Jiji marketplace</p>
                 </div>
-                {
+            </div>
+            </div>
+            
+            <div className="container mt-1 p-1">
+            <div className="row m-auto">
+                <div className="col-sm-12 p-1">
+               <h3 className="m-2">Trending Products</h3>
+                    <p className="m-2">Most Trending products on the Jiji marketplace</p>
+                </div>
+                <div className="col-sm-12 p-1 m-1">
+                
+                <div className="row m-auto">
+                
+                <div className="col-sm-2 m-2 mobile" style={{'border-radius':'17px','box-shadow':'3px 3px 3px 3px grey',cursor:'pointer'}}>
+                     <img src={productclock} style={{width:'100%'}}/>
+                    </div>
+                    <div className="col-sm-2 m-2 mobile" style={{'border-radius':'17px','box-shadow':'3px 3px 3px 3px grey',cursor:'pointer'}}>
+                    <img src={productclock} style={{width:'100%'}}/>
+                   </div>
+                   <div className="col-sm-2 m-2 mobile" style={{'border-radius':'17px','box-shadow':'3px 3px 3px 3px grey',cursor:'pointer'}}>
+                   <img src={productclock} style={{width:'100%'}}/>
+                  </div>
+                  <div className="col-sm-2 m-2 mobile" style={{'border-radius':'17px','box-shadow':'3px 3px 3px 3px grey',cursor:'pointer'}}>
+                  <img src={productclock} style={{width:'100%'}}/>
+                 </div>
+                 {
                     mostView.map((p, i) => (
-                        <Cardd key={i} product={p} />
+                        <div className="col-sm-2 m-2 mobile" style={{'border-radius':'17px','box-shadow':'3px 3px 3px 3px grey',cursor:'pointer'}}>
+                        <Cardd key={i} product={p} style={{width:'100%'}} />
+                       </div>
                     ))
                 }
-            </div>
-        </div>
+                 </div>
+                 </div>
+                
+                  <div className="col-sm-12 text-center mt-5">
+                  <button className="btn text-success" style={{'border-radius':'20px','border-color':'Green'}}>Learn more</button>
+                  </div>
+
+                 </div>
+
+                </div>
+              
+            </>
+        
     );
 };
 

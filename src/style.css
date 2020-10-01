@@ -62,3 +62,22 @@
     /* bring your own prefixes */
     transform: translate(-50%, -50%);
   }
+
+  :hover.mobile{
+    background-color:rgb(212, 212, 212);
+    position: relative;
+    top:2px;
+  }
+
+
+  @media only screen and (max-width: 831px){
+      .mobile
+      img{
+          width:60%;
+      }
+  }
+
+  .body{
+      margin: 0 auto;
+      padding: 0;
+  }
