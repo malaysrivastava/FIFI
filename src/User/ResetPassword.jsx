@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios';
 import {Form, Button} from 'react-bootstrap';
+import Regauth from '../Assests/Authentication Illustration.svg';
+
 
 const ResetPassword = ({ match }) => {
   const [formData, setFormData] = useState({
@@ -59,8 +61,11 @@ const ResetPassword = ({ match }) => {
       <ToastContainer />
       <div className="container centered m-1 p-2">
       <div className="row m-auto text-center">
-      <div className="col-sm-8 offset-sm-2">
-      <h1 className='text-2xl text-center font-extrabold'> Reset Your Password </h1>
+      <div className="col-sm-5 p-3">
+      <img src={Regauth} style={{width:'100%'}}/>
+     </div>
+     <div className="col-sm-5 offset-sm-2 pt-5">
+      <h1 className='text-2xl font-extrabold'> Reset Your Password </h1>
       <form className="form" onSubmit={handleSubmit} >
         <div className="form-group">
         <input className="form-control" type="password" placeholder="Password" onChange={handleChange('password1')} value={password1} />
@@ -71,7 +76,7 @@ const ResetPassword = ({ match }) => {
         
         </div>
         
-        <Button variant="danger" style={{width:'100%'}} type="submit">
+        <Button variant="success" style={{width:'100%'}} type="submit">
           Sign In
         </Button>
       </form>

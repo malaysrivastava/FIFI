@@ -4,6 +4,7 @@ import axios from 'axios';
 import { authenticate, isAuth } from '../helpers/auth';
 import { Link, Redirect } from 'react-router-dom';
 import { Form, Button } from 'react-bootstrap'
+import Regauth from '../Assests/Authentication Illustration.svg';
 
 const Login = ({ history }) => {
   const [formData, setFormData] = useState({
@@ -61,7 +62,11 @@ const Login = ({ history }) => {
       <ToastContainer />
       <div className="container centered text-center p-2 m-1">
         <div className="row text-center m-auto">
-        <div className="col-sm-8 offset-sm-2 text-center ">
+        <div className="col-sm-5 p-3">
+        <img src={Regauth} style={{width:'100%'}}/>
+       </div>
+       <div className="col-sm-4 offset-sm-3 p-3">
+
       <h1 className='text-2xl text-center mb-2 font-extrabold'> Sign In</h1>
       <form className="form" onSubmit={handleSubmit}>
 
@@ -71,18 +76,18 @@ const Login = ({ history }) => {
         <div className="form-group">
           <input className="form-control" type="password" placeholder="Password" onChange={handleChange('password1')} value={password1} />
         </div>
-        <Button variant="danger" style={{width:'100%'}} type="submit">
+        <Button variant="success" style={{width:'100%'}} type="submit">
           Sign In
         </Button>
         <div className="form-group mt-2">
         <Link to='/users/password/forget'>Forget password?</Link>
         </div>
       </form>
-      <div className="col-sm-12" style={{'margin-top':'10rem'}}>
+      <div className="col-sm-12" style={{'margin-top':'4rem'}}>
       <Form.Text className="text-muted">
       <h6>Don't have an account ?
   <a href='/register' target='_self'>
-          <span className='ml-2'>Sign Up</span>
+          <span className='ml-2'>SIGN UP</span>
         </a></h6>
     </Form.Text>
       </div>
