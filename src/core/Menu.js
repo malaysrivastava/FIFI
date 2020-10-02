@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import { signout, isAuth } from '../helpers/auth';
-import { ToastContainer, toast } from 'react-toastify';
+import { isAuth } from '../helpers/auth';
+import { ToastContainer } from 'react-toastify';
 import { Navbar, Nav, Dropdown, DropdownButton, Button, ButtonGroup } from 'react-bootstrap';
 import axios from "axios";
 
@@ -39,20 +39,12 @@ const Menu = ({ history }) => {
             })
     }, []);
 
-    const handleLogout = () => {
-        signout(() => {
-            history.push('/');
-            toast.success('Signout Successfully');
-        })
-    }
 
     return (
         <div>
             <ToastContainer />
             <Navbar expand="lg">
                 <Navbar.Brand ><Link to='/'>JIJI</Link></Navbar.Brand>
-
-
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto">
@@ -79,9 +71,8 @@ const Menu = ({ history }) => {
 
                         </DropdownButton>
                         <Nav.Link ><Link style={isActive(history, '/shop')} to='/shop'> Contact Us </Link></Nav.Link>
-                        <Nav.Link ><Link style={isActive(history, '/shop')} to='/shop'> Sell </Link></Nav.Link>
                         {
-                            isAuth() && <Nav.Link ><Link style={isActive(history, '/user/dashboard')} to='/user/dashboard'> Dashboard </Link></Nav.Link>
+                            isAuth() && <Nav.Link ><Link style={isActive(history, '/user/dashboard')} to='/user/dashboard'> {isAuth().name} </Link></Nav.Link>
                         }
                         {
                             !isAuth() &&
@@ -89,13 +80,7 @@ const Menu = ({ history }) => {
                                 <Nav.Link ><Link style={isActive(history, '/login')} to='/login'> SignIn </Link></Nav.Link>
                             </Fragment>
                         }
-                        {
-                            isAuth() &&
-                            <Fragment>
-                                <Nav.Link ><button onClick={handleLogout} className='btn btn-link p-0 m-0 pb-2 min'> Logout </button></Nav.Link>
-                            </Fragment>
-                        }
-
+                        <Nav.Link ><Link style={isActive(history, '/shopp')} to='/shopp'> Sell </Link></Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>

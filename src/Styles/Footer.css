@@ -1,0 +1,106 @@
+/**
+* Footer home15 to home21
+**/
+.home15{
+    background-color: #3DB83A;
+}
+.home16{
+    padding-top: 50px;
+    width: 90%;
+    margin: auto;
+}
+.home16 h3{
+    margin: auto;
+    padding-bottom: 2px;
+    color: white;
+    font-size: 21px;
+}
+.home16 ul{
+    padding-top: 8px;
+    list-style-type: none;
+    margin-left: -38px;
+}
+.home16 ul li a{
+    color: white;
+    font-weight: 400;
+    font-size: 15px;
+}
+.home16 ul li a:hover{
+    color: white;
+    text-decoration: none;
+}
+.home17{
+    width: 80%;
+    margin: auto;
+}
+.home18{
+    width: 80%;
+    margin-left: auto !important;
+}
+.home19{
+    width: 80%;
+    margin-left: auto !important;
+}
+.home20{
+    width: 60%;
+    margin-left: auto !important;
+}
+@media screen and (max-width: 980px){
+    .home20{
+        width: 90%;
+        margin-left: auto !important;
+    }   
+}
+@media screen and (max-width: 768px){
+    .home19{
+        width: 90%;
+        margin-left: auto !important;
+    }
+    .home20{
+        width: 80%;
+        margin-left: auto !important;
+    }   
+}
+@media screen and (max-width: 576px){
+    .home16{
+        padding-top: 30px;
+        width: 100%;
+    }
+    .home17{
+        width: 80%;
+        text-align: center;
+        margin: auto;
+    }
+    .home18{
+        width: 80%;
+        text-align: center;
+        margin: auto;
+    }
+    .home19{
+        width: 80%;
+        text-align: center;
+        margin: auto;
+    }
+    .home20{
+        width: 80%;
+        text-align: center;
+        margin: auto;
+    }
+}
+
+.home21{
+    width: 100%;
+    margin-top: 20px;
+    border-top: 2px solid white;
+}
+.home21 p{
+    padding-top: 10px;
+    text-align: center;
+    color: white;
+    font-size: 15px;
+}
+
+
+/**
+* Navbar
+**/

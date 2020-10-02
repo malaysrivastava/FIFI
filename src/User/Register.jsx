@@ -83,7 +83,7 @@ const Register = () => {
         <div className="container p-2 mt-5">
         <div className="row m-auto">
         <div className="col-sm-5 p-3">
-         <img src={Regauth} style={{width:'100%'}}/>
+         <img src={Regauth} alt="register img" style={{width:'100%'}}/>
         </div>
         <div className="col-sm-4 offset-sm-3 p-3">
         <h1 className='text-2xl text-center font-extrabold'> Sign Up</h1>

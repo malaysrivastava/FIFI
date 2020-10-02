@@ -21,8 +21,12 @@ const Cardd = ({ product }) => {
                 <Link className="ch1" to={`/product/${product._id}`}>
                 <ShowImage url="product" item={product} />
                 </Link>
+
                 <div className="ch3 text-center m-1">
-                {product.name.substring(0, 20)}
+                {product.name}
+                <div className="ch3">
+                    <h3>{product.name}</h3>
+
                 </div>
                  </div>
                   

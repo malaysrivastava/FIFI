@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Layout from '../core/Layout';
-import { isAuth, getCookie } from '../helpers/auth';
+import { isAuth, getCookie,signout } from '../helpers/auth';
 import { Link } from 'react-router-dom';
 import axios from "axios";
+import {toast, ToastContainer} from 'react-toastify'
 
-const UserDashboard = () => {
+const UserDashboard = ({history}) => {
 
     const { name, email, _id } = isAuth();
     const token = getCookie('token');
@@ -52,13 +53,25 @@ const UserDashboard = () => {
 
     }, [])
 
+    const handleLogout = () => {
+        signout(() => {
+            history.push('/');
+            toast.success('Signout Successfully');
+        })
+    }
+
     return (
         <div>
+        <ToastContainer />
             <Layout title='User Dashboard' description={`hello ${name}`}>
                 <div>
                     <ul>
                         <li><Link to={`/profile/${isAuth()._id}`}>Update Profile</Link></li>
                         <li> { isAuth() && isAuth().role === 1 && <Link to='/admin/dashboard'>Admin Dashboard </Link> }</li>
+                        <li>                        {
+                            isAuth() &&
+                                <button onClick={handleLogout} className='btn btn-link p-0 m-0 pb-2 min'> Logout </button>
+                        }</li>
                     </ul>
                 </div>
 
