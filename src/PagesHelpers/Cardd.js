@@ -22,7 +22,7 @@ const Cardd = ({ product }) => {
                     <ShowImage url="product" item={product} />
                 </Link>
                 <div className="ch3">
-                    <h3>{product.name.substring(0, 20)}</h3>
+                    <h3>{product.name}</h3>
                 </div>
             </div>
         </div>
