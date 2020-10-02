@@ -162,41 +162,22 @@ const Home = () => {
                 <div className="col-sm-12 p-1 m-1">
                 
                     <div className="row m-auto">
-                    <div className="col-sm-2 m-2 p-3 mobile" style={{'border-radius':'17px','box-shadow':'3px 3px 3px 3px grey',cursor:'pointer'}}>
-                     <img src={mobile} style={{width:'100%'}}/>
-                    </div>
-                    <div className="col-sm-2 m-2 p-3 mobile" style={{'border-radius':'17px','box-shadow':'3px 3px 3px 3px grey',cursor:'pointer'}}>
-                     <img src={mobile} style={{width:'100%'}}/>
-                    </div>
-                    <div className="col-sm-2 m-2 p-3 mobile" style={{'border-radius':'17px','box-shadow':'3px 3px 3px 3px grey',cursor:'pointer'}}>
-                     <img src={mobile} style={{width:'100%'}}/>
-                    </div>
-                    <div className="col-sm-2 m-2 p-3 mobile" style={{'border-radius':'17px','box-shadow':'3px 3px 3px 3px grey',cursor:'pointer'}}>
-                     <img src={mobile} style={{width:'100%'}}/>
-                    </div>
-                    <div className="col-sm-2 m-2 p-3 mobile" style={{'border-radius':'17px','box-shadow':'3px 3px 3px 3px grey',cursor:'pointer'}}>
-                    <img src={mobile} style={{width:'100%'}}/>
-                   </div>
-                   <div className="col-sm-2 m-2 p-3 mobile" style={{'border-radius':'17px','box-shadow':'3px 3px 3px 3px grey',cursor:'pointer'}}>
-                   <img src={mobile} style={{width:'100%'}}/>
-                  </div>
-                  <div className="col-sm-2 m-2 p-3 mobile" style={{'border-radius':'17px','box-shadow':'3px 3px 3px 3px grey',cursor:'pointer'}}>
-                  <img src={mobile} style={{width:'100%'}}/>
+                    
+                  {
+                      damcat.map((cat, ca) => (
+                        <div className="col-sm-2 m-2 p-1 mobile" style={{ 'border-radius': '17px', 'box-shadow': '3px 3px 3px 3px grey', cursor: 'pointer' }} key={ca}>
+                           
+                            <img src={`${process.env.REACT_APP_API_URL}/category/photo/${cat._id}?photoId=${cat._id}`} style={{ width: '100%','border-radius': '17px' }} />
+                            <div className="row m-auto m-1 text-center">
+                            <div className="col-sm-6">{cat.name}</div>
+                            <div className="col-sm-6">({cat.view} ads))</div>
+                            
+                            </div>
+                                                   
+                            </div>
+                      ))
+                      }
                  </div>
-                 <div className="col-sm-2 m-2 p-3 mobile" style={{'border-radius':'17px','box-shadow':'3px 3px 3px 3px grey',cursor:'pointer'}}>
-                 <img src={mobile} style={{width:'100%'}}/>
-                </div>
-                <div className="col-sm-2 m-2 p-3 mobile" style={{'border-radius':'17px','box-shadow':'3px 3px 3px 3px grey',cursor:'pointer'}}>
-                <img src={mobile} style={{width:'100%'}}/>
-               </div>
-               <div className="col-sm-2 m-2 p-3 mobile" style={{'border-radius':'17px','box-shadow':'3px 3px 3px 3px grey',cursor:'pointer'}}>
-               <img src={mobile} style={{width:'100%'}}/>
-              </div>
-
-                    </div>
-                {  
-                  //  JSON.stringify(damcat)
-                }
                 </div>
             </div>
             </div>
@@ -211,24 +192,10 @@ const Home = () => {
                 
                 <div className="row m-auto">
                 
-                <div className="col-sm-2 m-2 mobile" style={{'border-radius':'17px','box-shadow':'3px 3px 3px 3px grey',cursor:'pointer'}}>
-                     <img src={productclock} style={{width:'100%'}}/>
-                    </div>
-                    <div className="col-sm-2 m-2 mobile" style={{'border-radius':'17px','box-shadow':'3px 3px 3px 3px grey',cursor:'pointer'}}>
-                    <img src={productclock} style={{width:'100%'}}/>
-                   </div>
-                   <div className="col-sm-2 m-2 mobile" style={{'border-radius':'17px','box-shadow':'3px 3px 3px 3px grey',cursor:'pointer'}}>
-                   <img src={productclock} style={{width:'100%'}}/>
-                  </div>
-                  <div className="col-sm-2 m-2 mobile" style={{'border-radius':'17px','box-shadow':'3px 3px 3px 3px grey',cursor:'pointer'}}>
-                  <img src={productclock} style={{width:'100%'}}/>
-                 </div>
                  {
                     mostView.map((p, i) => (
-                        <div className="col-sm-2 m-2 mobile" style={{'border-radius':'17px','box-shadow':'3px 3px 3px 3px grey',cursor:'pointer'}}>
-                        <Cardd key={i} product={p} style={{width:'100%'}} />
-                       </div>
-                    ))
+                        <Cardd key={i} product={p}/>
+                     ))
                 }
                  </div>
                  </div>
